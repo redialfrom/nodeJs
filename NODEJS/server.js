@@ -28,9 +28,32 @@ app.get('/about', function(req, res) {
     // res.send('about page');
 });
 
+// const config = {
+//     user: 'SHUSER',
+//     password: 'NGAUTOTEST#$5^&',
+//     server: '192.168.12.105,1207',
+//     database: 'SOHO'
+// }
+
+// app.get('/db', async function(req, res){
+//     try {
+//         let pool = await sql.connect(config);
+//         let result1 = await pool.request()
+//             .input('input_parameter', sql.Int, value)
+//             .query('SELECT * FROM WA_PRODUCT_T WHERE PRODUCT_ID = @input_parameter');
+//         res.send(JSON.stringify(result1));
+//         console.dir(result1);
+//     } catch (err) {
+//     }
+// });
 
 async () => {
-    try{
-        await sql.ConnectionError('mssql://SHUSER:NGAUTOTEST#$5^&@192.168.12.105,1207/database')
+    try {
+        // make sure that any items are correctly URL encoded in the connection string
+        // await sql.connect('mssql://SHUSER:NGAUTOTEST#$5^&@192.168.12.105,1207/SOHO')
+        const result = await sql.query`select * from WA_PRODUCT_T`
+        console.dir(result)
+    } catch (err) {
+        // ... error checks
     }
 }
