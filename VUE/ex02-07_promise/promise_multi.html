@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" class="btn" style="width:500px; height: 100px; border-radius: 10px; background-color: indianred; font-size: large; font-weight: 1000;"> 
+        버튼이다이자식아
+    </button>
+
+    <script>
+        // 자바스크립트 엘리먼트 가져올 때 클래스는 반드시
+        // 인덱스 번호를 가져와야함
+        var btn = document.getElementsByClassName('btn')[0];
+
+        console.log(btn);
+
+        btn.addEventListener('click', function(){
+            // Promise로 비동기 함수를 순서대로 실행
+            fnProductReady(1, 2000)
+                .then((pResult1) => {
+                    console.log(pResult1);
+                    return fnProductReady(2, 1000);
+                })
+                .then((pResult2) => {
+                    console.log(pResult2);
+                    return fnProductReady(3, 500);
+                })
+                .then((pResult3) => console.log(pResult3));
+        });
+
+        // Promise로 비동기 함수 생성 
+        fnProductReady = (pNum, pTime) => {
+            return new Promise((fnResolve) => {
+                setTimeout(() => {
+                    console.log(pNum);
+                    fnResolve('상품이 성공적으로 배송되었습니다.');
+                }, 1000);
+            });
+        }
+    </script>    
+</body>
+</html>

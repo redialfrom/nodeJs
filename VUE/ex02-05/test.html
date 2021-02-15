@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 기존 함수 방식을 이용 -->
+    <button onclick="fetchtest()">Say Json</button>    
+    <!-- 화살표 함수 이용 -->
+    <button onclick="fetchtest_02()">Say Json2</button>    
+</body>
+<script>
+
+    // 선언하는 경우에는 바로 실행된다.
+    const fetchtest_01 = fetch('https://jsonplaceholder.typicode.com/users')
+        .then(pResponse => pResponse.json())
+        .then(pJSON => console.log(pJSON))
+
+    // 함수로 선언하는 경우에는 바로 실행 안 된다. 아래 함수와 같은 역할을 한다.
+    const fetchtest_02 = () => fetch('https://jsonplaceholder.typicode.com/users')
+        .then(pResponse => pResponse.json())
+        .then(pJSON => console.log(pJSON))
+
+    // then 에 표기된 pResponse, pJSON 는 fetch 메서드가 끝나고
+    // 넘어오는 값을 받는 매개변수이다. 
+    // 화살표 함수의 매개변수라고 생각하면 된다.
+    function fetchtest() {
+        fetch('https://jsonplaceholder.typicode.com/users')
+        .then(pResponse => pResponse.json())
+        .then(pJSON => console.log(pJSON))
+    }
+
+</script>
+</html>

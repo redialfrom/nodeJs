@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick ="a()">Json 로컬 읽기</button>    
+    <button onclick ="b()">Json 원격 읽기</button>    
+
+<script>
+    // JSON 로컬 텍스트 표시 
+    // .then 은 Promise  객체로 pResponse 매개변수에 저장하는 것 
+    const a = () => fetch('./data.json')
+                        .then(pResponse => pResponse.text())
+                        .then(pJson => console.log(pJson))
+
+
+    // JSON 원격 텍스트 표시
+    // .then 은 Promise  객체로 pResponse 매개변수에 저장하는 것 
+    // https://jsonplaceholder.typicode.com/posts/1 에 바로 접근할 수 없으므로
+    // https://cors-anywhere.herokuapp.com/ 을 붙여준다.
+    const b = () => fetch('https://cors-anywhere.herokuapp.com/' +'https://jsonplaceholder.typicode.com/posts/1')
+                        .then(pResponse => pResponse.text())
+                        .then(pJson => console.log(pJson))
+</script>
+</body>
+</html>
