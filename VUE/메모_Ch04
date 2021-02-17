@@ -1,0 +1,24 @@
+04. VUE 기초
+
+1.
+    단방향 바인딩과 v-bind 디렉티브
+
+    <p>{{sDate}}</p>                // HTML 앨리먼트(p, div, td, tr) 값을 만듬
+    <input v-bind:value="sDate">     // HTML 어트리뷰트(ex) value, id, class ...) 값을 만듬 
+
+2.
+    양방향 바인딩과 v-model 디렉티브
+    <input v-bind:value="sDate">     // sDate 값을 HTML 애트리뷰트에 보내기만 함
+    <input v-model:value="sDate">    // sDate 값과 입력값이 서로 연동됨 
+
+
+3. 
+    조건 판단과 v-if, v-else 디렉티브
+
+4.
+    반복문과 v-for 디렉티브
+
+5. 
+    이벤트 핸들러 실행과 v-on 디렉티브
+
+    

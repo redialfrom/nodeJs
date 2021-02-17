@@ -1,0 +1,27 @@
+Ch03
+
+Ch03-02
+    1.
+        manifest.JSON
+            -> name             // 바로가기 아이콘 설치 권장 팝업 배너 및 플래시 스크린에 표시되는 제목
+            -> short_name       // 바탕화면 바로가기 아이콘 아래 표시되는 제목
+            -> description      // 애플리케이션의 간단한 자기소개 문장
+            -> scope            // 매니페스트에 정의된 내용이 적용될 수 있는 파일들의 범위
+            -> start_url        // 프로그램 실행하면 시작될 URL 루트
+            -> display          // PWA를 실행하면 나타나는 화면 형태를 설정하는 속성
+                                // fullscreen
+                                // standalone
+                                // minimal-ui
+                                // browser
+            -> orientation      
+                                // portrait
+                                // landscape
+            -> theme_color      // 상태 표시줄 색상
+            -> background_color // 스플래시 스크린 배경색
+            -> icons            // 스플래시 스크린에 사용할 아이콘
+                                // src: 이미지 절대 주소 또는 상대 주소
+                                // sizes: 이미지 픽셀 크기
+                                // type: 이미지 파일 유형 
+
+        ** 매니페스트 확인 사이트 https://manifest-validator.appspot.com/
+    

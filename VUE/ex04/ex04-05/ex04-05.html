@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id="main">
+        <h1>좋아하는 과일은?</h1>
+
+        <ol>
+            <li v-for="item in aFruits">
+                {{item.aFruitName}}
+            </li>
+        </ol>
+    </div>
+    <script>
+        var main = new Vue({
+            el: '#main',
+            data: {
+                aFruits: [
+                    {aFruitName:'사과'},
+                    {aFruitName:'오렌지'},
+                    {aFruitName:'포도'}
+                ]
+            }
+        })
+    </script>
+</body>
+</html>

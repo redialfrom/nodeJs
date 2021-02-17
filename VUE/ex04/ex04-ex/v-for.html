@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id="main">
+        <ul v-for="(item, index) in aPerson">
+            <li>
+                <p>{{index}}</p>
+                <p>{{item.name}}</p>
+                <p>{{item.age}}</p>
+            </li>
+        </ul>
+
+    </div>
+</body>
+<script>
+    new Vue({
+      el: "#main",
+      data: {
+          aPerson: [
+            {
+                name: '육수창',
+                age: '27'
+            },
+            {
+                name: '에릭 사티',
+                age: '752'
+            },
+            {   
+                name: '괴테',
+                age: '321'
+            }
+        ]
+      }
+    })
+
+</script>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id="main">
+        <p>원본 문장: "{{sOriginalMessage}}"</p>
+        <p>대문자로 변환된 문장: "{{fnUpperCaseMsg}}"</p>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: '#main',
+        // data는 머스태시 안에 넣을 값이 간단할 떄 사용
+        data: {
+            sOriginalMessage: 'Pneumonoultramicroscopicsilicovolcanoconiosis'
+        },
+        // computed는 머스태시 안에 넣을 자바스크립트 로직이 복잡할 때 사용 
+        // 데이터에 접근하기 위해 this 사용 
+        computed:{
+            fnUpperCaseMsg: function() {
+                return this.sOriginalMessage.toUpperCase()
+            }
+        }
+
+    })
+</script>
+</html>
