@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id="main">
+        <p>클릭 숫자: {{nClick}}</p>
+        <p>카운트다운: {{fnCounter}}</p>
+        <!-- 버튼을 누르면 fnIncreament 메서드 실행 -->
+        <button v-on:click="fnIncrement">눌러 주세요!</button>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: '#main',
+        data: {
+            nClick: 0
+        },
+        // 머스태시 안의 로직이 복잡할 때 사용
+        computed:{
+            fnCounter(){
+                return 10 -this.nClick;
+            }
+        },
+        // 메서드는 이벤트 핸들러 로직을 실행할 때 사용
+        methods: {
+            // nClick 값을 1만큼 증가시킴 
+            fnIncrement(){
+                this.nClick++;
+            }
+        }
+    })
+</script>
+</html>

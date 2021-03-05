@@ -3,3 +3,49 @@ Ch05
 1.
     복잡한 로직과 computed 속성
 
+2.
+    computed 속성과 methods 속성의 차이점 
+    
+    computed 속성
+        - 머스태시에 작성할 로직이 복잡하여 함수로 정의할 떄
+        - 계산량이 많아 캐시가 필요할 때
+
+    methods 속성
+        - 뷰의 이벤트 핸들러 로직을 함수로 정의할 때
+
+3.
+
+    <my-element></my-element> // 3. 여기에 작성 html이 들어감 
+
+    ...
+    Vue.component('my-element', { // 1. my-element 등록
+        ...,
+        template: `<h1>안녕하세요</h1>` // 2. template 에 html 작성
+
+    })
+
+4.
+    props 속성 -> 컴포넌트에 전달되는 어트리뷰트의 값
+        Vue.component('favorite-fruit', {
+            props: ['fruit'],
+            ...
+        })
+
+        <favorite-fruit fruit="값"></favorite-fruit>
+
+5.
+    하나의 뷰 또는 복수의 화면 사이에서 여러 개의 컴포넌트를 
+    사용하면 각 컴포넌트 간에 상탯값을 전달하기 쉽지 않음.
+    이를 해결하기 위한 게 Vuex 라이브러리 
+
+    속성
+        - state: 공유한 상태값 데이터 정의.
+
+        - mutations: setters의 의미로 이해할 수 있음. 외부에서 동기 방식으로 저장할 때 사용
+
+        - getters: state의 데이터 값을 외부에서 읽어올 때 사용
+
+        - actions: 외부의 API 실행 같은 비동기 실행을 관리할 때 사용 
+
+
+
